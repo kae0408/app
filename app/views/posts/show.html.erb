@@ -1,0 +1,18 @@
+<div class="main posts-show">
+  <div class="container">
+    <div class="posts-show-item">
+      <p>
+        <%= @post.content %>
+      </p>
+      <div class="post-time">
+        <%= @post.created_at %>
+      </div>
+      <%= link_to("編集する" ,"/posts/#{@post.id}/edit")%>
+      
+      <%= link_to("/posts/#{@post.id}/destroy",{method:"post"}) do %>
+     <p class="sakuzyobtn">削除する</p>
+     <% end %>
+      
+    </div>
+  </div>
+</div>

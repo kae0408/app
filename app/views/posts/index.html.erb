@@ -1,0 +1,18 @@
+
+
+
+<div class="main posts-index">
+  <div class="container">
+
+    <% @posts.each do |post| %>
+      <div class="posts-index-item">
+        <%= link_to(post.content,"/posts/#{post.id}") %>
+      
+      <div class="post-time">
+       <%= link_to(post.created_at,"/posts/#{post.id}") %>
+      </div>
+      </div>
+    <% end %>
+    
+  </div>
+</div>
