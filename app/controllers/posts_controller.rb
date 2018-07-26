@@ -8,15 +8,23 @@ class PostsController < ApplicationController
   end
   
   def new 
-    
+    @post = Post.new
   end
   
   def create 
     #ファームから送信されたデータを受け取り、保存する処理
     @post = Post.new(content: params[:content])
-    @post.save
-    redirect_to("/posts/index")
+    
+    if @post.save
+      # 変数flash[:notice]にメッセージを代入
+      flash[:notice] = "投稿完了しました"
+      redirect_to("/posts/index")
+    else
+     render("posts/new")
+    end
+    
   end
+  
   
   
   def edit
@@ -26,14 +34,27 @@ class PostsController < ApplicationController
   def update
     @post = Post.find_by(id: params[:id])
     @post.content = params[:content]
+    
+    if
     @post.save
+    # 変数flash[:notice]にメッセージを代入
+    flash[:notice] = "投稿を編集しました"
     redirect_to("/posts/index")
+    else
+    
+    #editアクションを経由せずにedit.html.erbを直接表示できる
+    render("posts/edit")
+    end
+  
   end
   
   
   def destroy
     @post = Post.find_by(id: params[:id])
+    if
     @post.destroy
+    flash[:notice] = "投稿を削除しました"
+    end
     redirect_to("/posts/index")
   end
   

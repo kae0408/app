@@ -9,6 +9,12 @@
   
   <div class="form">
         <div class="form-body">
+          <!-- @postのエラーが表示される -->
+          <% @post.errors.full_messages.each do |message| %>
+            <div class="form-error">
+              <%= message %>
+            </div>
+          <% end %>
 
           <!--<label for="exampleInputEmail1">編集する</label>-->
          <textarea name="content" class="form-control"><%= @post.content %></textarea>

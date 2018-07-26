@@ -4,8 +4,16 @@
     <%= form_tag("/posts/create") do %>
       <div class="form">
         <div class="form-body">
+
+          <!-- @postのエラーメッセージが表示されるよう、「〇〇」の部分を書き換えてください -->
+          <% @post.errors.full_messages.each do |message| %>
+            <div class="form-error">
+              <%= message %>
+            </div>
+          <% end %>
           
-          <textarea name="content"></textarea>
+          <!-- 以下の<%= %>を用いて、初期値が表示されるようにしてください -->
+          <textarea name="content"><%= @post.content %></textarea>
           <input type="submit" value="投稿">
         </div>
       </div>
