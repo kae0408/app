@@ -5,11 +5,11 @@
     <% @users.each do |user| %>
       <div class="users-index-item">
         <div class="user-right">
-          <!-- 以下の<%= %>を使ってユーザー名を表示してください -->
-          <%= user.name %>
+          <!-- 以下の<%= %>を使ってユーザー名を表示 -->
+          <%= link_to(user.name, "/users/#{user.id}") %>
         </div>
       </div>
-    <!-- 以下の<% %>を使ってeach文のendを追加してください -->
+    <!-- 以下の<% %>を使ってeach文のend -->
     <% end %>
   </div>
 </div>
