@@ -1,0 +1,21 @@
+<div class="main users-edit">
+  <div class="container">
+    <div class="form-heading">アカウント編集</div>
+    <div class="form users-form">
+      <div class="form-body">
+        
+        <!-- form_tagメソッドに「multipart: true」を追加してください -->
+        <%= form_tag("/users/#{@user.id}/update", {multipart: true}) do %>
+          <p>ユーザー名</p>
+          <input name="name" value="<%= @user.name %>">
+          <p>画像</p>
+          <!-- 画像用のフォームを追加してください -->
+          <input name="image" type="file">
+          <p>メールアドレス</p>
+          <input name="email" value="<%= @user.email %>">
+          <input type="submit" value="保存">
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
