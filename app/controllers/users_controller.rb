@@ -51,6 +51,14 @@ class UsersController < ApplicationController
     end
   
   end
+  
+  def login_form
+    @user = User.find_by(id: params[:id])
+  end
+  
+  def login_form
+    
+  end
 
   
 end
