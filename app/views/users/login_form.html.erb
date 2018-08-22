@@ -3,12 +3,19 @@
     <div class="form-heading">ログイン</div>
     <div class="form users-form">
       <div class="form-body">
+        
+        <% if @error_message %>
+          <div class="form-error">
+            <%= @error_message %>
+          </div>
+        <% end %>
+        
         <%= form_tag("/login") do%>
         <p>メールアドレス</p>
-        <input name="email">
+        <input name="email" value="<%= @email %>">
         <p>パスワード</p>
         <!-- 以下のinputタグにtype属性を指定してください -->
-        <input type="password" name="password">
+        <input type="password" name="password" value="<%= @password %>">
         <input type="submit" value="Log In">
         <% end %>
       </div>
