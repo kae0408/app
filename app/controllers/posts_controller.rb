@@ -17,7 +17,10 @@ class PostsController < ApplicationController
   
   def create 
     #ファームから送信されたデータを受け取り、保存する処理
-    @post = Post.new(content: params[:content])
+    @post = Post.new(
+      content: params[:content],
+      user_id: @current_user.id
+      )
     
     if @post.save
       # 変数flash[:notice]にメッセージを代入
