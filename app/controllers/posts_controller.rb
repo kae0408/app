@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  
+  #コントローラーに設定して、ログイン済ユーザーのみにアクセスを許可する
   before_action :authenticate_user
   
   
@@ -9,6 +9,8 @@ class PostsController < ApplicationController
   
   def show 
     @post = Post.find_by(id: params[:id])
+    @user = @post.user
+    @likes_count = Like.where(post_id: @post.id).count
   end
   
   def new 
@@ -64,5 +66,16 @@ class PostsController < ApplicationController
     end
     redirect_to("/posts/index")
   end
+  
+  
+  
+  def ensure_correct_user
+    @post = Post.find_by(id: params[:id])
+    if @post.user_id != @current_user.id
+      flash[:notice] = "権限がありません"
+      redirect_to("/posts/index")
+    end
+  end
+  
   
 end

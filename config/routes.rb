@@ -1,18 +1,15 @@
 Rails.application.routes.draw do
-  
-  get "login" => "users#login_form"
-  post "login" => "users#login"
-  post "logout" => "users#logout"
-  
   post "users/:id/update" => "users#update"
   get "users/:id/edit" => "users#edit"
   post "users/create" => "users#create"
+  get "users/:id/likes" => "users#likes"
   get "signup" => "users#new"
   get "users/index" => "users#index"
+  get "user/:id" => "users#show"
   get "users/:id" => "users#show"
-  
-  
-  
+  post "login" => "users#login"
+  post "logout" => "users#logout"
+  get "login" => "users#login_form"
   
 
   get "posts/index" => "posts#index"
@@ -25,4 +22,9 @@ Rails.application.routes.draw do
   
   get "/" => "home#top"
   get "about" => "home#about"
+  
+  post "likes/:post_id/create" => "likes#create"
+  post "likes/:post_id/destroy" => "likes#destroy"
+  get "users/:id/likes" => "user#likes"
+  
 end

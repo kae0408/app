@@ -3,13 +3,14 @@
   padding: 20px 30px;
   background-color: white;
   overflow: hidden;
-  box-shadow: 0 2px 6px #c1ced7;
+  box-shadow: 0 2px 6px #e0e4e7;
+  margin: 10px 0;
 }
 
 .post-left img {
   width: 50px;
   height: 50px;
-  border-radius: 40%;
+  border-radius: 50%;
   box-shadow: 0 2px 6px #c1ced7;
   object-fit: cover;
 }
@@ -70,6 +71,22 @@
   color: #8899a6;
   margin-bottom: 10px;
 }
+
+.like-btn{
+  color: #8899a6;
+}
+
+
+.like-btn-unlike{
+  color: #680c0c;
+}
+
+
+.posts-show-item .fa {
+  font-size: 16px;
+  margin-right: 3px;
+}
+
 
 .post-menus {
   float: right;
