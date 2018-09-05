@@ -1,6 +1,10 @@
+@import url(https://fonts.googleapis.com/earlyaccess/sawarabigothic.css);
 /* reset ================================ */
 * {
   box-sizing: border-box;
+  font-family: 'Sawarabi Gothic';
+  transform: rotate(0.001deg);
+  transform: rotate(0.05deg);
 }
 
 html {
@@ -39,7 +43,6 @@ form input[type="submit"] {
 /* 共通レイアウト ================================ */
 body {
   color: #2d3133;
-  background-color: #e1e1e1;
   margin: 0;
   min-height: 1vh;
 }
@@ -127,7 +130,7 @@ header {
   height: auto;
   min-height: 100%;
   color: white;
-  background-color: #3ecdc6;
+  background-color: #000000;
   background-repeat: no-repeat;
   background-position: center 50%;
   background-size: cover;
@@ -143,7 +146,6 @@ header {
   font-weight: 500;
   line-height: 1.3;
   -webkit-font-smoothing: antialiased;
-  margin-bottom: 20px;
 }
 
 .top-main p {
@@ -179,11 +181,15 @@ header {
   box-shadow: 0 2px 6px #c1ced7;
 }
 
+
+
 .form-heading {
   font-weight: 300;
   margin: 60px 0 20px;
   font-size: 48px;
   color: #bcc8d4;
+    font-family: 'Lobster', cursive;
+    font-family: 'Caveat', cursive;
 }
 
 .form-body {
@@ -209,10 +215,11 @@ header {
   min-height: 110px;
   font-size: 16px;
   letter-spacing: 2px;
+  
 }
 
 .form input[type="submit"] {
-  background-color: #3ecdc6;
+  background-color: #000000;
   color: white;
   cursor: pointer;
   font-weight: 300;
@@ -229,11 +236,18 @@ header {
   clear: both;
 }
 
+.topmintext{
+  font-family: 'Lobster', cursive;
+font-family: 'Caveat', cursive;
+line-height: 0.8;
+padding-top: 20px;
+}
+
 /* フラッシュ ================================ */
 .flash {
   padding: 10px 0;
-  color: #3460b9;
-  background: rgb(251, 170, 88);
+  color: #fff;
+background: #f85e5e;
   text-align: center;
   position: absolute;
   top: 64px;

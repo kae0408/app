@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TweetApp</title>
+    <title>Art:tweet</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  
+  <style>
+@import url('https://fonts.googleapis.com/css?family=Caveat|Lobster');
+</style> 
   </head>
 
   <body>
     <header>
       <div class="header-logo">
         <% if @current_user %>
-          <%= link_to("TweetApp", "/posts/index") %>
+          <%= link_to("Art:tweet", "/posts/index") %>
         <% else %>
-          <%= link_to("TweetApp", "/") %>
+          <%= link_to("Art:tweet", "/") %>
         <% end %>
       </div>
       <ul class="header-menus">

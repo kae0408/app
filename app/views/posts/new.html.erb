@@ -10,7 +10,12 @@
             <div class="form-error">
               <%= message %>
             </div>
+            
+            
           <% end %>
+          
+          <p>画像</p>
+          <img src="<%= "/art_images/#{@post.art_image}" %>">
           
           <!-- 以下の<%= %>を用いて、初期値が表示されるようにしてください -->
           <textarea name="content"><%= @post.content %></textarea>

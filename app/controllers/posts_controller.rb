@@ -14,7 +14,9 @@ class PostsController < ApplicationController
   end
   
   def new 
-    @post = Post.new
+    @post = Post.new(
+      art_image:"rogo.png"
+      )
   end
   
   def create 
