@@ -14,12 +14,15 @@
             
           <% end %>
           
+          <%= form_tag("/posts/#{@post.id}/update", {multipart: true}) do %>
           <p>画像</p>
+          <input name="image" type="file">
           <img src="<%= "/art_images/#{@post.art_image}" %>">
           
           <!-- 以下の<%= %>を用いて、初期値が表示されるようにしてください -->
           <textarea name="content"><%= @post.content %></textarea>
           <input type="submit" value="投稿">
+          <%end%>
         </div>
       </div>
     <% end %>

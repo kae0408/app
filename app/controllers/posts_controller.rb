@@ -17,6 +17,7 @@ class PostsController < ApplicationController
     @post = Post.new(
       art_image:"rogo.png"
       )
+    
   end
   
   def create 
@@ -25,6 +26,12 @@ class PostsController < ApplicationController
       content: params[:content],
       user_id: @current_user.id
       )
+    
+    if params[:imaes]
+      @post.art_image = "#{post.id}.jpg"
+      image =  params[:image]
+      File.binwrite("public/user_images/#{@post.art_image}",image.read)
+    end
     
     if @post.save
       # 変数flash[:notice]にメッセージを代入
@@ -45,6 +52,13 @@ class PostsController < ApplicationController
   def update
     @post = Post.find_by(id: params[:id])
     @post.content = params[:content]
+    
+    if params[:imaes]
+      @post.art_image = "#{post.id}.jpg"
+      image =  params[:image]
+      File.binwrite("public/user_images/#{@post.art_image}",image.read)
+    end
+    
     
     if
     @post.save
